@@ -18,6 +18,7 @@ final class YafmRecipeConfiguration implements RecipeConfiguration
     private boolean enableCookedMuttonRecipe = false;
     private boolean enableCookedSquidRecipe = false;
     private boolean enableCarrotSoupRecipe = false;
+    private boolean enableApplePieRecipe = false;
 
     public void EnableFriedEggRecipe()
     {
@@ -37,6 +38,11 @@ final class YafmRecipeConfiguration implements RecipeConfiguration
     public void EnableCookedSquidRecipe()
     {
         this.enableCookedSquidRecipe = true;
+    }
+
+    public void EnableApplePieReceipe()
+    {
+        this.enableApplePieRecipe = true;
     }
 
     public Iterable<Recipe> GetRecipes()
@@ -90,6 +96,21 @@ final class YafmRecipeConfiguration implements RecipeConfiguration
             // (0.35 experience, same as all other food smelting recipes)
             Recipe cookedSquidRecipe = new SmeltingRecipe(cookedSquidResult, rawSquid, FoodSmeltingExperience);
             resultBuilder.add(cookedSquidRecipe);
+        }
+
+        if (this.enableApplePieRecipe)
+        {
+        	ItemDefinition apple = YafmConstants.AppleItemDefinition;
+        	ItemDefinition sugar = YafmConstants.SugarItemDefinition;
+        	ItemDefinition wheat = YafmConstants.WheatItemDefinition;
+        	ItemDefinition egg = YafmConstants.EggItemDefinition;
+        	ItemDefinition applePie = YafmConstants.ApplePieItemDefinition;
+        	RecipeResult applePieResult = new RecipeResult(applePie);
+        	
+        	// Craft (shapeless) 2x Wheat + 1x Egg + 2x Sugar + 3x Apple --> Apple Pie!
+            Iterable<ItemDefinition> inputs = ImmutableList.of(wheat, wheat, egg, sugar, sugar, apple, apple, apple);
+            Recipe applePieRecipe = new ShapelessCraftingRecipe(applePieResult, inputs);
+            resultBuilder.add(applePieRecipe);
         }
 
         return resultBuilder.build();

@@ -18,3 +18,9 @@ Dependencies: JDK, JRE, Gradle (tested with 2.10).
 1. Navigate to the YAFM source tree.
 2. Run "gradle", then "gradle -b abc.gradle" (or the "build-all.bat" script).
 3. The result files will be in the "build\libs".
+
+#### Eclipse
+For Eclipse if you prefer:
+1. Run "gradle eclipse"
+2. In Eclipse, Import Existing Project
+3. Build and Run Configuration "YAFM_Client"

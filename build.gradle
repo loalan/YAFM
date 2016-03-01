@@ -18,6 +18,7 @@ buildscript
     }
 }
 
+apply plugin: "eclipse"
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 // define the properties file

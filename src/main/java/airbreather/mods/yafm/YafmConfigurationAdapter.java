@@ -55,6 +55,11 @@ final class YafmConfigurationAdapter extends CustomConfigurationBase
             this.eventConfiguration.EnableRawSquidDrops();
         }
 
+        if (ShouldEnableApplePieRecipe(forgeConfiguration)) 
+        {
+        	this.recipeConfiguration.EnableApplePieReceipe();
+        }
+
         // Unconditionally enable the cooking recipes for the new meats.
         // If you have the raw stuff, you should be allowed to cook it.
         this.recipeConfiguration.EnableCookedMuttonRecipe();
@@ -123,5 +128,15 @@ final class YafmConfigurationAdapter extends CustomConfigurationBase
 
         Property enableRawSquidDropsProperty = forgeConfiguration.get(Configuration.CATEGORY_GENERAL, enableRawSquidDropsPropertyName, enableRawSquidDropsDefault, enableRawSquidDropsComment);
         return enableRawSquidDropsProperty.getBoolean(enableRawSquidDropsDefault);
+    }
+    
+    private static boolean ShouldEnableApplePieRecipe(Configuration forgeConfiguration)
+    {
+        String enableApplePieRecipePropertyName = "enableApplePieRecipe";
+        boolean enableApplePieRecipeDefault = true;
+        String enableApplePieRecipeComment = "Enable the Apple --> Apple Pie crafting recipe?  true/false (true is the default)";
+
+        Property enableApplePieRecipeProperty = forgeConfiguration.get(Configuration.CATEGORY_GENERAL, enableApplePieRecipePropertyName, enableApplePieRecipeDefault, enableApplePieRecipeComment);
+        return enableApplePieRecipeProperty.getBoolean(enableApplePieRecipeDefault);
     }
 }

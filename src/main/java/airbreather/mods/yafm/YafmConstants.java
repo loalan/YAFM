@@ -23,6 +23,15 @@ final class YafmConstants
     // Refers to the bowl item in the base game.
     public static final ItemDefinition BowlItemDefinition = new ItemDefinition(BaseGameModID, "bowl");
 
+    // Refers to the apple item in the base game.
+    public static final ItemDefinition AppleItemDefinition = new ItemDefinition(BaseGameModID, "apple");
+    
+    // Refers to the sugar item in the base game.
+    public static final ItemDefinition SugarItemDefinition = new ItemDefinition(BaseGameModID, "sugar");
+    
+    // Refers to the wheat item in the base game.
+    public static final ItemDefinition WheatItemDefinition = new ItemDefinition(BaseGameModID, "wheat");
+
     // Refers to the fried egg item added by this mod.
     public static final ItemDefinition FriedEggItemDefinition = new ItemDefinition(ModID, "eggFried");
 
@@ -40,4 +49,7 @@ final class YafmConstants
 
     // Refers to the carrot soup item added by this mod.
     public static final ItemDefinition CarrotSoupItemDefinition = new ItemDefinition(ModID, "carrotSoup");
+    
+    // Refers to the apple pie item added by this mod.
+    public static final ItemDefinition ApplePieItemDefinition = new ItemDefinition(ModID, "applePie");
 }

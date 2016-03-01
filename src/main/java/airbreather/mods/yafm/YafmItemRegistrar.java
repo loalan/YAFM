@@ -66,6 +66,14 @@ final class YafmItemRegistrar extends ItemRegistrarBase
             // container: bowl (same as mushroom stew)
             return CreateFoodItemInContainer(3, 4, 0.6f, false, Items.bowl);
         }
+        if (definition.equals(YafmConstants.ApplePieItemDefinition))
+        {
+            // maxStackSize: 1
+            // hungerRestored: 6 (same as Cooked Chicken)
+            // saturationModifier: 0.6 (a "standard" saturation modifier)
+            // shouldWolvesEat: true (can't be any worse than rotten flesh, right?)
+            return CreateFoodItem(1, 6, 0.6f, false);
+        }
 
         return super.CreateItemCore(definition);
     }

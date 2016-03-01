@@ -18,7 +18,8 @@ final class YafmItemConfiguration implements ItemConfiguration
             YafmConstants.CookedMuttonItemDefinition,
             YafmConstants.RawSquidItemDefinition,
             YafmConstants.CookedSquidItemDefinition,
-            YafmConstants.CarrotSoupItemDefinition
+            YafmConstants.CarrotSoupItemDefinition,
+            YafmConstants.ApplePieItemDefinition
         );
     }
 }
